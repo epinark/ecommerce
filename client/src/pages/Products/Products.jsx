@@ -4,8 +4,9 @@ import List from "../../components/List/List";
 import { useParams } from "react-router-dom";
 
 const Products = () => {
-  const catid = parseInt(useParams().id);
+  const catId = parseInt(useParams().id);
   const [maxPrice, setMaxPrice] = useState(1000);
+  const [sort, setSort] = useState(null);
 
   return (
     <div className="products">
@@ -29,18 +30,35 @@ const Products = () => {
           <h2>Filter by price</h2>
           <div className="inputItem">
             <span>0</span>
-            <input type="range" min={0} max={1000} />
-            <span>1000</span>
+            <input
+              type="range"
+              min={0}
+              max={1000}
+              onChange={(e) => setMaxPrice(e.target.value)}
+            />
+            <span>{maxPrice}</span>
           </div>
         </div>
         <div className="filterItem">
           <h2>Sort by</h2>
           <div className="inputItem">
-            <input type="radio" id="asc" value="asc" name="price" />
+            <input
+              type="radio"
+              id="asc"
+              value="asc"
+              name="price"
+              onChange={(e) => setSort("asc")}
+            />
             <label htmlFor="asc">Price (Lowest first)</label>
           </div>
           <div className="inputItem">
-            <input type="radio" id="asc" value="asc" name="price" />
+            <input
+              type="radio"
+              id="asc"
+              value="asc"
+              name="price"
+              onChange={(e) => setSort("asc")}
+            />
             <label htmlFor="asc">Price (Highest first)</label>
           </div>
         </div>
@@ -51,7 +69,7 @@ const Products = () => {
           src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
           alt=""
         />
-        <List />
+        <List catId={catId} maxPrice={maxPrice} sort={sort} />
       </div>
     </div>
   );
