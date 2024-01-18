@@ -14,7 +14,7 @@ const List = () => {
       price: 12,
     },
     {
-      id: 1,
+      id: 2,
       img: "https://images.pexels.com/photos/158648/girl-coat-old-coat-brown-coat-158648.jpeg?auto=compress&cs=tinysrgb&w=600",
       img2: "https://images.pexels.com/photos/2146344/pexels-photo-2146344.jpeg?auto=compress&cs=tinysrgb&w=600",
       title: "Coat",
@@ -23,7 +23,7 @@ const List = () => {
       price: 12,
     },
     {
-      id: 1,
+      id: 3,
       img: "https://images.pexels.com/photos/1427984/pexels-photo-1427984.jpeg?auto=compress&cs=tinysrgb&w=600",
       img2: "https://images.pexels.com/photos/1425248/pexels-photo-1425248.jpeg?auto=compress&cs=tinysrgb&w=600",
       title: "Skirt",
