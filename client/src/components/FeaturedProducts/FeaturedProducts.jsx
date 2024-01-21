@@ -1,61 +1,31 @@
 import React from "react";
-import "./FeaturedProducts.scss";
 import Card from "../Card/Card";
+import "./FeaturedProducts.scss";
+import useFetch from "../../hooks/useFetch";
 
 const FeaturedProducts = ({ type }) => {
-  const data = [
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/4393685/pexels-photo-4393685.jpeg?auto=compress&cs=tinysrgb&w=600",
-      img2: "https://images.pexels.com/photos/10802672/pexels-photo-10802672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      title: "Long Sleeve Graphic T-Shirt",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/158648/girl-coat-old-coat-brown-coat-158648.jpeg?auto=compress&cs=tinysrgb&w=600",
-      img2: "https://images.pexels.com/photos/2146344/pexels-photo-2146344.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Coat",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/1427984/pexels-photo-1427984.jpeg?auto=compress&cs=tinysrgb&w=600",
-      img2: "https://images.pexels.com/photos/1425248/pexels-photo-1425248.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Skirt",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-    {
-      id: 1,
-      img: "https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg?auto=compress&cs=tinysrgb&w=600",
-      img2: "https://images.pexels.com/photos/906002/pexels-photo-906002.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Hat",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-  ];
+  const { data, loading, error } = useFetch(
+    `/products?populate=*&[filters][type][$eq]=${type}`
+  );
+
   return (
     <div className="featuredProducts">
       <div className="top">
         <h1>{type} products</h1>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus
-          doloribus eos velit cumque expedita eius voluptatum in dolorem
-          reprehenderit unde ea, nam soluta ut quis aperiam quia natus accusamus
-          est.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+          lacus vel facilisis labore et dolore magna aliqua. Quis ipsum
+          suspendisse ultrices gravida. Risus commodo viverra maecenas.
         </p>
       </div>
       <div className="bottom">
-        {data.map((item) => (
-          <Card item={item} key={item.id} />
-        ))}
+        {error
+          ? "Something went wrong!"
+          : loading
+          ? "loading"
+          : data?.map((item) => <Card item={item} key={item.id} />)}
       </div>
     </div>
   );
