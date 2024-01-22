@@ -24,17 +24,33 @@ const Cart = () => {
   );
   const handlePayment = async () => {
     try {
+      console.log("Starting payment process...");
+
       const stripe = await stripePromise;
+
+      console.log("Sending request to create order...");
+
       const res = await makeRequest.post("/orders", {
         products,
       });
+
+      console.log("Order creation response:", res.data);
+
       await stripe.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
       });
+
+      console.log("Redirecting to checkout...");
     } catch (err) {
-      console.log(err);
+      console.error("Error during payment process:", err);
+
+      // Log the Axios error response for further investigation
+      if (err.response) {
+        console.error("Axios error response:", err.response.data);
+      }
     }
   };
+
   return (
     <div className="cart">
       <h1>Products in your cart</h1>
