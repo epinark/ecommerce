@@ -7,13 +7,16 @@ This project is a React application using Strapi as a headless CMS for content m
  <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img width="50" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript"/></a></code>
 	<code><a href="https://react.dev/"><img width="50" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React" title="React"/></a></code>
  <code><a href="https://strapi.io/"><img width="50" src="https://github.com/marwin1991/profile-technology-icons/assets/54946572/0ed1571c-e3df-4f34-94df-102c0afbdb2b" alt="Strapi" title="Strapi"/></a></code>
+ <code>"<a href="https://redux.js.org/"><img width="50" src="https://user-images.githubusercontent.com/25181517/187896150-cc1dcb12-d490-445c-8e4d-1275cd2388d6.png" alt="Redux" title="Redux"/></a></code>
 
-- React.js
+- HTML
 - SCSS
+- Javascript
+- React.js
 - React Router
 - Axios
 - Redux
-- -Strapi
+- Strapi
 - Stripe
   
 ## Features ✨ 
