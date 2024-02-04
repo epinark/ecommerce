@@ -1,0 +1,13 @@
+{
+    "name": "project-root",
+    "version": "1.0.0",
+    "description": "Heroku deployment",
+    "main": "index.js",
+    "scripts": {
+      "start": "echo 'Deploying to Heroku'"
+    },
+    "engines": {
+      "node": ">=14.0.0"
+    }
+  }
+  
