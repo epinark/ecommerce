@@ -1,13 +1,5 @@
-{
-    "name": "project-root",
-    "version": "1.0.0",
-    "description": "Heroku deployment",
-    "main": "index.js",
-    "scripts": {
-        "start": "strapi start"
-    },
-    "engines": {
-      "node": ">=14.0.0"
-    }
-  }
-  
+{"scripts": {
+    "client:build": "cd client && yarn install && yarn build",
+    "api:start": "cd api && yarn install && yarn develop",
+    "start": "yarn run client:build && yarn run api:start"
+  }}
